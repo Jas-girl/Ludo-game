@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/dice.css" type="text/css">
+    <title>Ludo Board Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- <div class="gameover">
+        <div class="scoreboard">
+            <h1>Game Over</h1>
+            <div class="playerlist"><div class="player movered1"></div><div id="r1">Red Player</div><img src="./assets/img/crown1.png" alt="" class="icon2"></div>
+            <div class="playerlist"><div class="player moveyellow1"></div><div id="r2">Yellow Player</div><img src="./assets/img/crown2.png" alt="" class="icon2"></div>
+            <div class="playerlist"><div class="player movegreen1"></div><div id="r2">Green Player</div><img src="./assets/img/crown3.png" alt="" class="icon2"></div>
+            <div class="playerlist"><div class="player moveblue1"></div><div id="r2">Blue Player</div>Looser</div>
+        </div>
+    </div>
+    <div class="welcome">
+        <div class="menu"></div>
+    </div> -->
+    <main class="container">
+        <div class="ludo-board">
+            <div class="red-home bg-red super-center">
+                <div class="white-box super-center">
+                    <div class="player-room"></div>
+                </div>
+            </div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step bg-blue"></div>
+            <div class="step bg-blue"></div>
+            <div class="step red-stop"></div>
+            <div class="step bg-blue"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step bg-blue"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step bg-blue"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step bg-blue"></div>
+            <div class="step"></div>
+            <div class="winner-home">
+                <div class="rwh stack"></div>
+                <div class="gwh stack"></div>
+                <div class="bwh stack"></div>
+                <div class="ywh stack"></div>
+            </div> 
+            <div class="step"></div>
+            <div class="step bg-red"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+          
+            <div class="step"></div>
+            <div class="step blue-stop"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step bg-red"></div>
+            <div class="step bg-red"></div>
+            <div class="step bg-red"></div>
+            <div class="step bg-red"></div>
+            <div class="step bg-red"></div>
+            <div class="step bg-yellow"></div>
+            <div class="step bg-yellow"></div>
+            <div class="step bg-yellow"></div>
+            <div class="step bg-yellow"></div>
+            <div class="step bg-yellow"></div>
+            <div class="step bg-yellow"></div>
+             <div class="step"></div>
+             <div class="step"></div>
+             <div class="step green-stop"></div>
+             <div class="step"></div>
+             <div class="step"></div>
+             <div class="step"></div>
+             <div class="step"></div>
+             <div class="step"></div>
+             <div class="step"></div>
+             <div class="step"></div>
+             <div class="step bg-yellow"></div>
+             <div class="step"></div>   
+            <div class="green-home bg-green super-center">
+                <div class="white-box super-center">
+                <div class="player-room"></div>
+            </div>
+            </div>
+            <div class="step"></div>
+            <div class="step bg-green"></div>
+            <div class="step "></div>
+            <div class="step"></div>
+            <div class="step bg-green"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step bg-green"></div>
+            <div class="step"></div>
+            <div class="step"></div>
+            <div class="step bg-green"></div>
+            <div class="step yellow-stop"></div>
+            <div class="step bg-green"></div>
+            <div class="step bg-green"></div>
+            <div class="step"></div>   
+            <div class="step"></div>
+            <div class="step bg-green"></div>
+            <div class="step"></div>
+            <div class="blue-home bg-blue super-center">
+                <div class="white-box super-center">
+                    <div class="player-room"></div>
+                </div>
+            </div>
+           
+            <div class="yellow-home bg-yellow super-center">
+                <div class="white-box super-center">
+                    <div class="player-room"></div>
+                </div>
+            </div>
+        </div>
+        <div class="test-controller">
+            <div class="topbar"><div class="timer"><img src="./assets/img/timer.png" alt="" class="icon"><span id="watch">00:00:00</span></div></div>
+            <div class="timer">Turn: <span class="current-turn">...</span><span id="dice-value">...</span>
+            </div>
+            <button id="dice" class="d0"></button>
+            <div class="red_control control">
+                <button id="movered1" class="player movered1 bg-red"></button>
+                <button id="movered2" class="player movered2 bg-red"></button>
+                <button id="movered3" class="player movered3 bg-red"></button>
+                <button id="movered4" class="player movered4 bg-red"></button>
+            </div>
+            <div class="blue_control control">
+                <button id="moveblue1" class="player moveblue1 bg-blue"></button>
+                <button id="moveblue2" class="player moveblue2 bg-blue"></button>
+                <button id="moveblue3" class="player moveblue3 bg-blue"></button>
+                <button id="moveblue4" class="player moveblue4 bg-blue"></button>
+            </div>
+            <div class="yellow_control control">
+                <button id="moveyellow1" class="player moveyellow1 bg-yellow"></button>
+                <button id="moveyellow2" class="player moveyellow2 bg-yellow"></button>
+                <button id="moveyellow3" class="player moveyellow3 bg-yellow"></button>
+                <button id="moveyellow4" class="player moveyellow4 bg-yellow"></button>
+            </div>
+            <div class="green_control control">
+                <button id="movegreen1" class="player movegreen1 bg-green"></button>
+                <button id="movegreen2" class="player movegreen2 bg-green"></button>
+                <button id="movegreen3" class="player movegreen3 bg-green"></button>
+                <button id="movegreen4" class="player movegreen4 bg-green"></button>
+            </div>
+        </div>
+        </div>
+     
+    </main>
+    <script src="./assets/js/timer.js?version=<?=time()?>"></script>
+    <script src="./assets/js/logic.js"></script>
+    <script src="./assets/js/autorun.js"></script>
+</body>
+
+</html>
