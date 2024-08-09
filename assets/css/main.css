@@ -673,6 +673,15 @@ main {
 .d6 {
     background-image: url('../img/dice6.png');
 }
+.msg{
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
 
 @media screen and (max-width: 900px) {
     main {

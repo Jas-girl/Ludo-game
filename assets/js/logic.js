@@ -503,7 +503,7 @@ function movePlayer(M_Player, M_Step, M_Road) {
                 if (getWinPlayers(M_Player.home) > 3) {
                     if (!current_turn.rank > 0) {
                         current_turn.rank = ++rank_count;
-                        console.log(M_Player.color + " : You just got " + rank_count + " rank ");
+                        $('.winner').text(M_Player.color + " : You just got " + rank_count + " rank ");
                     }
                    
                     $(M_Player.home + " .white-box").css("background-image", "url(assets/img/crown" + rank_count + ".png)");
@@ -573,7 +573,7 @@ function movePlayer(M_Player, M_Step, M_Road) {
         }
         if (M_Player.status == 'win') {
             if (current_turn.rank > 0) {
-                console.log("game finished for " + M_Player.color);
+                $(".winner").text("game finished for " + M_Player.color);
 
 
 
